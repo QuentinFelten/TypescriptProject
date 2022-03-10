@@ -1,0 +1,13 @@
+{
+  "$id": "shop.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["products"],
+  "additionalProperties": false,
+  "properties": {
+    "products": {
+      "type": "array",
+      "products": { "$ref": "product.json" }
+    }
+  }
+}
