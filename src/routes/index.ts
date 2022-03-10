@@ -13,7 +13,7 @@ const options = {
       },
     },
   },
-  handler: (req, res) => {
+  handler: (_req: any, res: { send: (arg0: { hello: string; }) => void; }) => {
     res.send({ hello: "world" });
   },
 };
