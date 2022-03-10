@@ -34,4 +34,6 @@ export async function invoicesRoutes (fastify: FastifyInstance) {
       
     }
   })
+
+  
 }

@@ -1,0 +1,13 @@
+{
+    "$id": "auth.json",
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "required": ["username", "password", "emailOne", "emailTwo"],
+    "additionalProperties": false,
+    "properties": {
+        "username": { "type": "string"},
+        "password": { "type": "string"},
+        "emailOne": { "type": "string"},
+        "emailTwo": { "type": "string"}
+  }
+}
