@@ -1,7 +1,7 @@
 import { application } from "express";
 import { fastify } from "./lib/fastify";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 // Routes
 
