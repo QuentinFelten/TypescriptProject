@@ -1,26 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  Unique,
-  OneToMany,
-  ManyToMany,
-  JoinTable,
-  ManyToOne,
-  PrimaryColumn,
-} from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-  Matches,
-} from "class-validator";
+import { Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 import { Allergy } from "./Allergy";
 import { Product } from "./Product";
 

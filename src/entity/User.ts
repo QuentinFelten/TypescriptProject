@@ -5,17 +5,7 @@ import {
   Unique,
   OneToMany,
 } from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-} from "class-validator";
+import { Length, IsEmail } from "class-validator";
 import { ProductListing } from "./ProductListing";
 import { BuyingHistory } from "./BuyingHistory";
 

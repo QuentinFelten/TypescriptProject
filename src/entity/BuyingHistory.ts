@@ -1,23 +1,5 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  Unique,
-  OneToMany,
-  ManyToOne,
-  PrimaryColumn,
-} from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-} from "class-validator";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { IsInt, Length, Min, Max } from "class-validator";
 import { ProductListing } from "./ProductListing";
 import { User } from "./User";
 
@@ -37,6 +19,7 @@ export class BuyingHistory {
 
   @Column()
   @Min(0)
+  @IsInt()
   quantity: number;
 
   @Column()
@@ -46,6 +29,7 @@ export class BuyingHistory {
   @Column()
   @Min(0)
   @Max(5)
+  @IsInt()
   rating: number;
 
   @Column()

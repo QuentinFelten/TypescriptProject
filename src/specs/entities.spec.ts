@@ -1,24 +1,38 @@
-import { expect, use } from "chai";
+import { expect } from "chai";
 import { createConnection } from "typeorm";
 import { User } from "../entity/User";
-import { Allow, validate, validateOrReject } from "class-validator";
+import { validate } from "class-validator";
 import { Product } from "../entity/Product";
 import { Allergy } from "../entity/Allergy";
 
 describe("database", function () {
   describe("create users", function () {
-    /*it("should reset the database"), async function () {
-
+    it("should reset the database"),
+      async function () {
         createConnection()
-            .then(async (connection) => {
-              const tables = [""]
-            })
-            .catch((error) => {
-              console.log(error);
-              expect(5).to.eq(6);
-            });
+          .then(async (connection) => {
+            const tables = [
+              "allergy",
+              "buying_history",
+              "product",
+              "product_allergy",
+              "product_listing",
+              "user",
+            ];
 
-    };*/
+            for (var elt of tables) {
+              await connection.manager.query(`TRUNCATE TABLE ${elt}`);
+              let result = await connection.manager.query(
+                `SELECT * FROM ${elt}`
+              );
+              expect(result).to.be.empty;
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            expect(5).to.eq(6);
+          });
+      };
 
     it("should create a user", async function () {
       const user = new User();

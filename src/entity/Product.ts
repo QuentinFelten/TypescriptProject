@@ -4,21 +4,8 @@ import {
   Column,
   Unique,
   OneToMany,
-  ManyToMany,
 } from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-  Matches,
-} from "class-validator";
-import { Allergy } from "./Allergy";
+import { Length, Matches } from "class-validator";
 import { ProductAllergy } from "./ProductAllergy";
 import { ProductListing } from "./ProductListing";
 

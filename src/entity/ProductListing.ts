@@ -2,24 +2,10 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  Unique,
   OneToMany,
-  ManyToMany,
-  JoinTable,
   ManyToOne,
 } from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-  Matches,
-} from "class-validator";
+import { IsInt, Length, Min } from "class-validator";
 import { User } from "./User";
 import { Product } from "./Product";
 import { BuyingHistory } from "./BuyingHistory";
@@ -35,6 +21,7 @@ export class ProductListing {
 
   @Column()
   @Min(0)
+  @IsInt()
   stock: number;
 
   @Column()

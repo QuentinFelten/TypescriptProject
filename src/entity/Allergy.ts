@@ -4,22 +4,9 @@ import {
   Column,
   Unique,
   OneToMany,
-  ManyToMany,
-  JoinTable,
 } from "typeorm";
-import {
-  Contains,
-  IsInt,
-  Length,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  Min,
-  Max,
-  min,
-  Matches,
-} from "class-validator";
-import { Product } from "./Product";
+import { Length } from "class-validator";
+
 import { ProductAllergy } from "./ProductAllergy";
 
 @Entity()
