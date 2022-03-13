@@ -1,0 +1,11 @@
+{
+    "$id": "auth.json",
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "required": ["id"],
+    "additionalProperties": false,
+    "properties": {
+        "id": { "type": "number"},
+        "productName": { "type": "string"}
+  }
+}

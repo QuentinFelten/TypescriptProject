@@ -1,3 +1,4 @@
+
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import { fastify } from "./lib/fastify";
@@ -9,3 +10,4 @@ createConnection()
   });
 
 fastify.listen(process.env.PORT ?? 3000).catch(console.error);
+
