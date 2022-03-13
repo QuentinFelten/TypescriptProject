@@ -1,3 +1,11 @@
+This app is an online sales app for some "niche" products: wines, cheeses and teas.
+This app is mainly designed to target the "connaiseurs" of these fields, by giving some infos about the product that would be otherwise hard to find.
+
+This is still a work in progress, and thus only provides some basic services such as logging in and buying items, but it was designed to be much more.
+The final goal is to have various main services along with the shop, such as a detailed presentation about each and every item in said shop, a bidding platform and a Q&A forum.
+
+
+
 # Checkpoints report for the project
 
 You **MUST** append a filled copy of this document at the end of your `README.MD`.
