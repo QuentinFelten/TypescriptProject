@@ -18,7 +18,5 @@ describe('/invoices', function() {
 			expect (reponse.statusCode).to.eq(200)
 			expect (reponse.headers['content-type']).to.eq('text/html')})
         })
-
-
     })
 
