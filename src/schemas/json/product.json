@@ -5,9 +5,11 @@
   "required": ["description", "inStock", "unitPriceWithoutTax", "taxPercent"],
   "additionalProperties": false,
   "properties": {
+    "name": { "type": "string"},
+    "provider": { "type": "string"},
     "description": { "type": "string" },
-    "inStock": {"type": "string"},
-    "unitPriceWithoutTax": { "type": "number" },
-    "taxPercent": { "type": "number" }
+    "stock": {"type": "string"},
+    "price": { "type": "number" },
+    "allergy": { "type": "string"}
   }
 }

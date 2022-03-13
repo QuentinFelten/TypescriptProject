@@ -1,6 +1,7 @@
 export interface Register {
     username: string
     password: string
-    emailOne: string
-    emailTwo: string
+    email: string
+    firstN: string
+    lastN: string
 }

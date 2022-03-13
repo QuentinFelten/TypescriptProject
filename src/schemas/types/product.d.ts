@@ -1,6 +1,8 @@
 export interface Product {
+  name: string;
+  provider: string;
   description: string;
-  inStock: string;
-  unitPriceWithoutTax: number;
-  taxPercent: number;
+  stock: string;
+  price: number;
+  allergy: string;
 }
