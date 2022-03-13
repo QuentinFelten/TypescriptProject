@@ -1,3 +1,11 @@
+This app is an online sales app for some "niche" products: wines, cheeses and teas.
+This app is mainly designed to target the "connaiseurs" of these fields, by giving some infos about the product that would be otherwise hard to find.
+
+This is still a work in progress, and thus only provides some basic services such as logging in and buying items, but it was designed to be much more.
+The final goal is to have various main services along with the shop, such as a detailed presentation about each and every item in said shop, a bidding platform and a Q&A forum.
+
+
+
 # Checkpoints report for the project
 
 You **MUST** append a filled copy of this document at the end of your `README.MD`.
@@ -22,9 +30,9 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ### GraphQL API only
 
-- [ ] Reduce code duplication for the various involved schemas (of the database, of the ORM, of GraphQL...). **[1 point]** 🔵
+- [x] Reduce code duplication for the various involved schemas (of the database, of the ORM, of GraphQL...). **[1 point]** 🔵
 
-  > How did you achieve this?
+  > Queries to the server must respect strict json schemas.
 
 - [ ] Mitigation(s) against too complex GraphQL queries, arbitrary deep nested object fetching or related DoS. **[1 point per mitigation, up to 2]**
 
@@ -35,9 +43,9 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ### Input validation
 
-- [ ] Strictly and deeply validate the type of every input (`params, querystring, body`) at runtime before any processing. **[1 point]** 🔵
+- [x] Strictly and deeply validate the type of every input (`params, querystring, body`) at runtime before any processing. **[1 point]** 🔵
 
-  > How did you achieve this?
+  > Queries to the server must respect strict json schemas.
 
 - [ ] Ensure the type of every input can be inferred by Typescript at any time and properly propagates across the app. **[1 point]** 🔵
 
@@ -58,7 +66,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 - [ ] Did you build or use an authorisation framework, making the authorisation widely used in your code base? **[1 point]**
 
-  > How did you achieve this?
+  > Worked on authorisation using Passport but did not have the time to implement it properly.
 
 - [ ] Do you have any way to ensure authorisation is checked on every endpoint? **[1 point]**
   > It is pretty easy to forget authorising some action.
@@ -72,11 +80,11 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 - [ ] Use a hash for any sensitive data you do not need to store as plain text. 🔵
 
-  > Also check this if you do not store any password or such data (and say it here).
+  > Data encryption was supposed to be done using bcrypt. Due to lack of time, it was not implemented.
 
-- [ ] Store your configuration entries in environment variables or outside the git scope. **[1 point]** 🔵
+- [X] Store your configuration entries in environment variables or outside the git scope. **[1 point]** 🔵
 
-  > How did you achieve this?
+  > Usage of ./config/config.env file
 
 - [ ] Do you provide a way to list every configuration entries (setup instructions, documentation, requireness... are appreciated)? **[1 point]**
 
@@ -87,7 +95,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ### Package management
 
-- [ ] Do not use any package with less than 50k downloads a week. 🔵
+- [x] Do not use any package with less than 50k downloads a week. 🔵
 
 - [ ] Did you write some automated tools that check no unpopular dependency was installed? If yes, ensure it runs frequently. **[1 point]**
 
@@ -116,9 +124,9 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ### Error management
 
-- [ ] Do not expose internal application state or code (no sent stacktrace in production!). **[1 point]** 🔵
+- [x] Do not expose internal application state or code (no sent stacktrace in production!). **[1 point]** 🔵
 
-  > How did you achieve this?
+  > THe application doese not leak any sensitive data (private or regarding the application's structure) to the user.
 
 - [ ] Do you report errors to Sentry, Rollbar, Stackdriver… **[1 point]**
   > How did you achieve this?
@@ -155,11 +163,11 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ### Automated tests
 
-- [ ] You implemented automated specs. **[1 point]** 🔵
+- [x] You implemented automated specs. **[1 point]** 🔵
 
   > Please provide a link to the more complete summary you have.
 
-- [ ] Your test code coverage is 75% or more. **[1 point]** 🔵
+- [x] Your test code coverage is 75% or more. **[1 point]** 🔵
 
   > Please provide a link to the `istanbul` HTML coverage summary (or from a similar tool).
 
