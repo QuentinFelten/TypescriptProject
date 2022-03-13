@@ -1,25 +1,10 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
-import {User} from "./entity/User";
+import { createConnection } from "typeorm";
+import { User } from "./entity/User";
+import { Allergy } from "./entity/Allergy";
+import { Product } from "./entity/Product";
 
-import { fastify } from './lib/fastify'
+import { validate, validateOrReject } from "class-validator";
+
+import { fastify } from "./lib/fastify";
 fastify.listen(process.env.PORT ?? 3000).catch(console.error);
-
-
-createConnection().then(async connection => {
-
-    console.log("Inserting a new user into the database...");
-    const user = new User();
-    user.firstName = "Timber";
-    user.lastName = "Saw";
-    user.age = 25;
-    await connection.manager.save(user);
-    console.log("Saved a new user with id: " + user.id);
-
-    console.log("Loading users from the database...");
-    const users = await connection.manager.find(User);
-    console.log("Loaded users: ", users);
-
-    console.log("Here you can setup and run express/koa/any other framework.");
-
-}).catch(error => console.log(error));

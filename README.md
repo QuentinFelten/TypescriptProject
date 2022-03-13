@@ -1,5 +1,40 @@
 # TypescriptProject
 
+Database :
+
+- Download MySQL server : https://dev.mysql.com/downloads/installer/
+- Setup local server
+- add ormconfig.json file
+
+```
+
+{
+ "type": "mysql",
+ "host": "localhost",
+ "port": 3306,
+ "username": "yourUsername",
+ "password": "yourPassword",
+ "database": "yourDatabaseName",
+ "synchronize": true,
+ "logging": false,
+ "entities": [
+    "dist/entity/**/*.js"
+ ],
+ "migrations": [
+    "dist/migration/**/*.js"
+ ],
+ "subscribers": [
+    "dist/subscriber/**/*.js"
+ ],
+ "cli": {
+    "entitiesDir": "dist/entity",
+    "migrationsDir": "dist/migration",
+    "subscribersDir": "dist/subscriber"
+ }
+}
+
+```
+
 # Checkpoints report for the project
 
 You **MUST** append a filled copy of this document at the end of your `README.MD`.
@@ -7,7 +42,7 @@ You **MUST** append a filled copy of this document at the end of your `README.MD
 This document serves three main purposes:
 
 - providing you a clear list of my expectations (check each point when done) ;
-- ensuring I do not miss some of your engineering during the review 
+- ensuring I do not miss some of your engineering during the review
 - asking for additional information that helps me during the review.
 
 ## Notice
