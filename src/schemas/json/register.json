@@ -7,7 +7,8 @@
     "properties": {
         "username": { "type": "string"},
         "password": { "type": "string"},
-        "emailOne": { "type": "string"},
-        "emailTwo": { "type": "string"}
+        "email": { "type": "string"},
+        "firstN": { "type": "string"},
+        "lastN": { "type": "string"}
   }
 }
