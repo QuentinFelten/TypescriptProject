@@ -19,7 +19,7 @@ enum MIME_TYPES {
 export async function shopRoutes(fastify: FastifyInstance) {
   fastify.route<{ Body: Shop }>({
     method: "GET",
-    url: "/shop",
+    url: "/",
     schema: {
       body: shopSchema,
       response: { 200: shopSchema },
@@ -32,7 +32,7 @@ export async function shopRoutes(fastify: FastifyInstance) {
 
   fastify.route<{ Body: Product}>({
     method: "GET",
-    url: "/shop/product",
+    url: "/product",
     schema: {
       body: productSchema,
       response: { 200: productSchema },
@@ -45,7 +45,7 @@ export async function shopRoutes(fastify: FastifyInstance) {
 
   fastify.route<{ Body: Buy}>({
     method: "GET",
-    url: "/shop/product/buy",
+    url: "/product/buy",
     schema: {
       body: buySchema,
       response: { 200: buySchema },
