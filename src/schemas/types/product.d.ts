@@ -6,6 +6,7 @@
  */
 
 export interface Product {
+  id: number;
   name?: string;
   provider?: string;
   description: string;

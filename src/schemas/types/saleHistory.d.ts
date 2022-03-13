@@ -5,7 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface PathParams {
-  id: number;
-  productName?: string;
+export interface SaleHistory {
+  idBuyer: number;
+  idListing: number;
+  quantity: number;
+  price: number;
+  rating: number;
+  review?: string;
 }

@@ -7,6 +7,7 @@
 
 export interface Buy {
   product?: {
+    id: number;
     name?: string;
     provider?: string;
     description: string;
