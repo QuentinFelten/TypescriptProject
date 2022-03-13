@@ -279,6 +279,8 @@ dist
 
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
+.idea/
+.vscode/
 node_modules/
 
 # Visual Studio 6 build log
@@ -356,3 +358,7 @@ MigrationBackup/
 .ionide/
 test-results/
 playwright-report/
+build/
+tmp/
+temp/
+ormconfig.json
