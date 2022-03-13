@@ -14,7 +14,7 @@ enum MIME_TYPES {
 export async function invoicesRoutes (fastify: FastifyInstance) {
   fastify.route<{ Body: Invoice }>({
     method: 'POST',
-    url: '/',
+    url: '/invoices',
     schema: {
       body: invoiceSchema,
       response: { 200: invoiceSchema }
@@ -34,4 +34,6 @@ export async function invoicesRoutes (fastify: FastifyInstance) {
       
     }
   })
+
+  
 }

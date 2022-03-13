@@ -1,15 +1,3 @@
-# TypescriptProject
-
-1.  Adding more properties unknown to the schema makes fastify ignore them completely (the returned body only contains the contents matching the schema)
-    Missing properties trigger a message error from fastify : "x should have required property y"
-    When a property has a null value in the payload, if the schema allows null values the returned body specifies null, otherwise it returns an empty string (in a case of a string)
-    Additional tests with different types : returns 0 for integers, error message for specific string patterns : "body.date should match pattern \"^\\d{4}-\\d{2}-\\d{2}$\"
-
-2.  Adding unknown properties to the reply body triggers an IDE error, but no crashes occur. The response body does not include the added unknown properties.
-    Missing properties from the reply triggers an IDE error, but no crashes occur. The response body is an error message of code 500, "_missing property_ is required!".
-
-3.  YES
-
 # Checkpoints report for the project
 
 You **MUST** append a filled copy of this document at the end of your `README.MD`.
