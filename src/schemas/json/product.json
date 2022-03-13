@@ -2,21 +2,14 @@
   "$id": "product.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
-  "required": [
-    "id",
-    "description",
-    "inStock",
-    "unitPriceWithoutTax",
-    "taxPercent"
-  ],
+  "required": ["id", "name", "price", "description", "stock"],
   "additionalProperties": false,
   "properties": {
     "id": { "type": "number" },
     "name": { "type": "string" },
-    "provider": { "type": "string" },
-    "description": { "type": "string" },
-    "stock": { "type": "string" },
     "price": { "type": "number" },
-    "allergy": { "type": "string" }
+    "description": { "type": "string" },
+    "stock": { "type": "number" },
+    "allergy": { "type": ["string", "null"] }
   }
 }

@@ -2,15 +2,18 @@ import { FastifyInstance } from "fastify";
 import { renderToString } from "react-dom/server";
 import * as shopSchema from "../schemas/json/shop.json";
 import { Shop } from "../schemas/types/shop";
-import showShopHTML from "../templates/shopHTML";
-import * as productSchema from "../schemas/json/product.json";
 import { Product } from "../schemas/types/product";
-import showProductHTML from "../templates/productHTML";
+import { PathParams } from "../schemas/types/pathParams"
 import * as buySchema from "../schemas/json/buy.json";
+import * as productSchema from "../schemas/json/product.json";
+import * as pathParamSchema from "../schemas/json/pathParams.json";
 import { Buy } from "../schemas/types/buy";
+import showShopHTML from "../templates/shopHTML";
 import showBuyProductHTML from "../templates/buyProductHTML";
-import * as messageSchema from "../schemas/json/message.json";
-import { Message } from "../schemas/types/message";
+import showProductHTML from "../templates/productHTML";
+
+import * as shopExample from "../specs/shop.json";
+import * as productExample from "../specs/apple.json";
 
 enum MIME_TYPES {
   HTML = "text/html",
@@ -23,25 +26,23 @@ export async function shopRoutes(fastify: FastifyInstance) {
     method: "GET",
     url: "/",
     schema: {
-      body: shopSchema,
       response: { 200: shopSchema },
     },
     handler: async function ShopRender(request, reply): Promise<Shop> {
-      const jsxElement = showShopHTML(request.body);
-      return reply.type(MIME_TYPES.HTML).send(renderToString(jsxElement));
+      // return shopExample;
+      return {} ;
     },
   });
 
-  fastify.route<{ Body: Product }>({
+  fastify.route<{ Body: Product, Params: PathParams}>({
     method: "GET",
-    url: "/product",
+    url: "/product/:id",
     schema: {
-      body: productSchema,
+      params: pathParamSchema,
       response: { 200: productSchema },
     },
     handler: async function ProductRender(request, reply): Promise<Product> {
-      const jsxElement = showProductHTML(request.body);
-      return reply.type(MIME_TYPES.HTML).send(renderToString(jsxElement));
+      return productExample;
     },
   });
 
@@ -50,10 +51,11 @@ export async function shopRoutes(fastify: FastifyInstance) {
     url: "/product/buy",
     schema: {
       body: buySchema,
-      response: { 200: messageSchema },
+      response: { 200: buySchema },
     },
-    handler: async function AuthRender(request, reply): Promise<Message> {
-      return { message: "Connection succesful" };
+    handler: async function AuthRender(request, reply): Promise<Buy> {
+      const jsxElement = showBuyProductHTML(request.body);
+      return reply.type(MIME_TYPES.HTML).send(renderToString(jsxElement));
     },
   });
 }

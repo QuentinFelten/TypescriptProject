@@ -1,14 +1,14 @@
 {
-    "$id": "auth.json",
-    "$schema": "http://json-schema.org/schema",
-    "type": "object",
-    "required": ["username", "password", "emailOne", "emailTwo"],
-    "additionalProperties": false,
-    "properties": {
-        "username": { "type": "string"},
-        "password": { "type": "string"},
-        "email": { "type": "string"},
-        "firstN": { "type": "string"},
-        "lastN": { "type": "string"}
+  "$id": "register.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["username", "password", "email", "firstName", "lastName"],
+  "additionalProperties": false,
+  "properties": {
+    "username": { "type": "string" },
+    "password": { "type": "string" },
+    "email": { "type": "string" },
+    "firstName": { "type": "string" },
+    "lastName": { "type": "string" }
   }
 }

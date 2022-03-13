@@ -2,10 +2,10 @@
     "$id": "buy.json",
     "$schema": "http://json-schema.org/schema",
     "type": "object",
-    "required": ["username", "password"],
+    "required": ["user", "product"],
     "additionalProperties": false,
     "properties": {
         "product": { "$ref": "product.json"},
-        "quantity": { "type": "string"}
+        "user": { "$ref": "user.json"}
   }
 }

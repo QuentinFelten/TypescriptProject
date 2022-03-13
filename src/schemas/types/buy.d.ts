@@ -6,14 +6,20 @@
  */
 
 export interface Buy {
-  product?: {
+  product: {
     id: number;
-    name?: string;
-    provider?: string;
+    name: string;
+    price: number;
     description: string;
-    stock?: string;
-    price?: number;
-    allergy?: string;
+    stock: number;
+    allergy?: string | null;
   };
-  quantity?: string;
+  user: {
+    id: number;
+    email: string;
+    password: string;
+    isAdmin: boolean;
+    firstName: string;
+    lastName: string;
+  };
 }

@@ -8,12 +8,6 @@ import { Message } from "../schemas/types/message";
 import { Register } from "../schemas/types/Register";
 import showAuthHTML from "../templates/authHTML";
 
-enum MIME_TYPES {
-  HTML = "text/html",
-  JSON = "application/json",
-  PDF = "application/pdf",
-}
-
 export async function authRoutes(fastify: FastifyInstance) {
   fastify.route<{ Body: Auth }>({
     method: "POST",
@@ -28,11 +22,11 @@ export async function authRoutes(fastify: FastifyInstance) {
   });
 
   fastify.route<{ Body: Register }>({
-    method: "GET",
+    method: "POST",
     url: "/register",
     schema: {
       body: registerSchema,
-      response: { 200: authSchema },
+      response: { 200: messageSchema },
     },
     handler: async function registerRender(request, reply): Promise<Message> {
       return { message: "Account creation successful" };

@@ -6,5 +6,8 @@
  */
 
 export interface Shop {
-  products: unknown[];
+  list?: ObjectObject[];
+}
+export interface ObjectObject {
+  [k: string]: unknown;
 }

@@ -7,10 +7,9 @@
 
 export interface Product {
   id: number;
-  name?: string;
-  provider?: string;
+  name: string;
+  price: number;
   description: string;
-  stock?: string;
-  price?: number;
-  allergy?: string;
+  stock: number;
+  allergy?: string | null;
 }
