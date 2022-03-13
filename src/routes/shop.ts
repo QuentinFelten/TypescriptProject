@@ -8,11 +8,7 @@ import * as buySchema from "../schemas/json/buy.json";
 import * as productSchema from "../schemas/json/product.json";
 import * as pathParamSchema from "../schemas/json/pathParams.json";
 import { Buy } from "../schemas/types/buy";
-import showShopHTML from "../templates/shopHTML";
 import showBuyProductHTML from "../templates/buyProductHTML";
-import showProductHTML from "../templates/productHTML";
-
-import * as shopExample from "../specs/shop.json";
 import * as productExample from "../specs/apple.json";
 
 enum MIME_TYPES {

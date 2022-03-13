@@ -1,7 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { Invoice } from '../schemas/types/invoice'
 import * as invoiceSchema from '../schemas/json/invoice.json'
-import showInvoice from '../templates/show'
 import showInvoiceHTML from '../templates/invoiceHTML'
 import {renderToString} from 'react-dom/server'
 

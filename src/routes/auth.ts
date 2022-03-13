@@ -1,12 +1,10 @@
 import { FastifyInstance } from "fastify";
-import { renderToString } from "react-dom/server";
 import * as authSchema from "../schemas/json/auth.json";
 import * as registerSchema from "../schemas/json/register.json";
 import * as messageSchema from "../schemas/json/message.json";
 import { Auth } from "../schemas/types/auth";
 import { Message } from "../schemas/types/message";
 import { Register } from "../schemas/types/Register";
-import showAuthHTML from "../templates/authHTML";
 
 export async function authRoutes(fastify: FastifyInstance) {
   fastify.route<{ Body: Auth }>({
