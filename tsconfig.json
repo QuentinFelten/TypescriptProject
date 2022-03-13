@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "es2018",
-    "moduleResolution": "node",
+    "lib": ["es5", "es6"],
+    "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "dist",
     "strict": true,
+    "strictPropertyInitialization": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
