@@ -1,7 +1,6 @@
-import { fastify } from "../lib/fastify";
-import { expect } from "chai";
-import * as jsonPayload from "./payload.json";
-
+import {fastify} from '../lib/fastify'
+import {expect} from 'chai'
+import * as jsonPayload from './payload.json'
 
 describe('/invoices', function() {
 	describe('POST render', function() {
@@ -20,15 +19,4 @@ describe('/invoices', function() {
 			expect (reponse.headers['content-type']).to.eq('text/html')})
         })
     })
-    it("should return HTML", async function () {
-      const reponse = await fastify.inject({
-        method: "POST",
-        url: "/invoices",
-        headers: { Accept: "text/html" },
-        payload: jsonPayload,
-      });
-      expect(reponse.statusCode).to.eq(200);
-      expect(reponse.headers["content-type"]).to.eq("text/html");
-    });
-  });
-});
+

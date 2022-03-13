@@ -80,11 +80,11 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 - [ ] Strictly and deeply validate the type of every input (`params, querystring, body`) at runtime before any processing. **[1 point]** 🔵
 
-  > How did you achieve this?
+  We put various levels of protection: fastify schemas, class-validators validations and SQL constraints.
 
 - [ ] Ensure the type of every input can be inferred by Typescript at any time and properly propagates across the app. **[1 point]** 🔵
 
-  > How did you achieve this?
+ All input types can be converted to typescript by using a typeorm implementation.
 
 - [ ] Ensure the static and runtime input types are always synced. **[1 point]** 🔵
   > How did you achieve this? If extra commands must be run before the typescript checking, how do you ensure there are run?
@@ -161,7 +161,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 - [ ] Do not expose internal application state or code (no sent stacktrace in production!). **[1 point]** 🔵
 
-  > How did you achieve this?
+  We used a custom error handler seen in class to avoid any info leaks about internal server errors.
 
 - [ ] Do you report errors to Sentry, Rollbar, Stackdriver… **[1 point]**
   > How did you achieve this?
@@ -179,9 +179,7 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 - [ ] Always use the async implementations when available. **[1 point]** 🔵
 
-  > List all the functions you call in their async implementation instead of the sync one.
-  >
-  > Ex: I used `await fs.readFile` in file `folder/xxx.ts:120` instead of `fs.readFileSync`.
+  To be honest, everything was developed with async in mind, so a list would be of no real use.
 
 - [ ] No unhandled promise rejections, no uncaught exceptions… **[1 point]** 🔵
   > For example, how do you ensure every promise rejection is caught and properly handled?
