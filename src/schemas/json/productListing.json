@@ -1,5 +1,5 @@
 {
-  "$id": "item-productListing.json",
+  "$id": "productListing.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "required": ["idProduct", "idVendor", "price", "stock", "id"],

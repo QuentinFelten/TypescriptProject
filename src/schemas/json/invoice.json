@@ -1,7 +1,14 @@
 {
   "$schema": "http://json-schema.org/schema",
   "type": "object",
-  "required": ["reference", "date", "customer", "biller", "itemInvoices", "paymentDelayInDays"],
+  "required": [
+    "reference",
+    "date",
+    "customer",
+    "biller",
+    "itemInvoices",
+    "paymentDelayInDays"
+  ],
   "additionalProperties": false,
   "properties": {
     "reference": { "type": "string" },

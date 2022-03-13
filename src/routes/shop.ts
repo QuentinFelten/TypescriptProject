@@ -9,6 +9,8 @@ import showProductHTML from "../templates/productHTML";
 import * as buySchema from "../schemas/json/buy.json";
 import { Buy } from "../schemas/types/buy";
 import showBuyProductHTML from "../templates/buyProductHTML";
+import * as messageSchema from "../schemas/json/message.json";
+import { Message } from "../schemas/types/message";
 
 enum MIME_TYPES {
   HTML = "text/html",
@@ -30,7 +32,7 @@ export async function shopRoutes(fastify: FastifyInstance) {
     },
   });
 
-  fastify.route<{ Body: Product}>({
+  fastify.route<{ Body: Product }>({
     method: "GET",
     url: "/product",
     schema: {
@@ -41,18 +43,17 @@ export async function shopRoutes(fastify: FastifyInstance) {
       const jsxElement = showProductHTML(request.body);
       return reply.type(MIME_TYPES.HTML).send(renderToString(jsxElement));
     },
-  })
+  });
 
-  fastify.route<{ Body: Buy}>({
+  fastify.route<{ Body: Buy }>({
     method: "GET",
     url: "/product/buy",
     schema: {
       body: buySchema,
-      response: { 200: buySchema },
+      response: { 200: messageSchema },
     },
-    handler: async function BuyRender(request, reply): Promise<Buy> {
-      const jsxElement = showBuyProductHTML(request.body);
-      return reply.type(MIME_TYPES.HTML).send(renderToString(jsxElement));
+    handler: async function AuthRender(request, reply): Promise<Message> {
+      return { message: "Connection succesful" };
     },
-  })
+  });
 }

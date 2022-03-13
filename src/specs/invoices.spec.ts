@@ -8,17 +8,14 @@ describe('/invoices', function() {
 			const response = await fastify.inject({method: 'POST', url: '/invoices', headers: {Accept: 'application/json'}, payload: jsonPayload })
 			expect (response.statusCode).to.eq(200)
 			expect (response.headers['content-type']).to.eq('application/json; charset=utf-8')
-			
-			const json: unknown = JSON.parse(response.body)
-			expect (json).to.haveOwnProperty('message').eq('body should be object')
 		})
 
 		it('should return HTML', async function () {
 			const reponse = await fastify.inject({method: 'POST', url: '/invoices', headers: {Accept: 'text/html'}, payload: jsonPayload })
 			expect (reponse.statusCode).to.eq(200)
-			expect (reponse.headers['content-type']).to.eq('text/html')})
-        })
+			expect (reponse.headers['content-type']).to.eq('text/html')
+		})
 
 
     })
-
+})

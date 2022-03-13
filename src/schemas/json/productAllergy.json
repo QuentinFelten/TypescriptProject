@@ -1,5 +1,5 @@
 {
-  "$id": "item-productAllergy.json",
+  "$id": "productAllergy.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "required": ["idProduct", "idAllergy"],

@@ -1,5 +1,5 @@
 {
-  "$id": "item-user.json",
+  "$id": "user.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
   "required": ["id", "email", "password", "isAdmin", "firstName", "lastName"],

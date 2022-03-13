@@ -1,11 +1,10 @@
 {
-  "$id": "allergy.json",
+  "$id": "message.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
-  "required": ["id", "name"],
+  "required": ["message"],
   "additionalProperties": false,
   "properties": {
-    "id": { "type": "number" },
-    "name": { "type": "string" }
+    "message": { "type": "string" }
   }
 }
