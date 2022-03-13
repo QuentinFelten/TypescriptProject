@@ -1,0 +1,15 @@
+{
+  "$id": "item-user.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["id", "email", "password", "isAdmin", "firstName", "lastName"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "number" },
+    "email": { "type": "string" },
+    "password": { "type": "string" },
+    "isAdmin": { "type": "boolean" },
+    "firstName": { "type": "string" },
+    "lastName": { "type": "string" }
+  }
+}

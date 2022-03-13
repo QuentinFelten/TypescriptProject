@@ -5,6 +5,11 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface Shop {
-  products: unknown[];
+export interface ProductListing {
+  idProduct: number;
+  idVendor: number;
+  price: number;
+  stock: number;
+  id: number;
+  description?: string;
 }

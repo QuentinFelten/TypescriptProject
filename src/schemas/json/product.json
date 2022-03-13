@@ -1,15 +1,22 @@
 {
-  "$id": "item-invoice.json",
+  "$id": "item-product.json",
   "$schema": "http://json-schema.org/schema",
   "type": "object",
-  "required": ["description", "inStock", "unitPriceWithoutTax", "taxPercent"],
+  "required": [
+    "id",
+    "description",
+    "inStock",
+    "unitPriceWithoutTax",
+    "taxPercent"
+  ],
   "additionalProperties": false,
   "properties": {
-    "name": { "type": "string"},
-    "provider": { "type": "string"},
+    "id": { "type": "number" },
+    "name": { "type": "string" },
+    "provider": { "type": "string" },
     "description": { "type": "string" },
-    "stock": {"type": "string"},
+    "stock": { "type": "string" },
     "price": { "type": "number" },
-    "allergy": { "type": "string"}
+    "allergy": { "type": "string" }
   }
 }

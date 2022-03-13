@@ -1,19 +1,24 @@
-import { application } from "express";
 import { fastify } from "./lib/fastify";
+
+const dotenv = require("dotenv")
 
 const PORT = process.env.PORT || 5000 || 8080;
 
-// Routes
-fastify.get("/", (req, reply) => {
-  reply.send("Hello World!");
+// Definition env
+dotenv.config({
+  path: "./config/config.env",
 });
 
-// Listen
-/* fastify.listen(process.env.PORT ?? 3000).catch(console.error) */
-application.listen(PORT, () => {
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+// Routes
+fastify.get("/", (req, reply) => {
+  reply.send({ test: "Hello World!" });
 });
-/* const start = async () => {
+
+// Passport
+// TODO: Implement Passport
+
+// Listen
+const start = async () => {
   try {
     await fastify.listen(PORT);
     fastify.log.info(
@@ -24,4 +29,4 @@ application.listen(PORT, () => {
     process.exit(1);
   }
 };
-start(); */
+start();
