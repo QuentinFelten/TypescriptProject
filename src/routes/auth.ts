@@ -5,7 +5,6 @@ import * as registerSchema from "../schemas/json/register.json";
 import { Auth } from "../schemas/types/auth";
 import { Register } from "../schemas/types/Register";
 import showAuthHTML from "../templates/authHTML";
-import * as shopSchema from "../schemas/json/shop.json";
 
 enum MIME_TYPES {
   HTML = "text/html",
@@ -16,7 +15,7 @@ enum MIME_TYPES {
 export async function authRoutes(fastify: FastifyInstance) {
   fastify.route<{ Body: Auth }>({
     method: "GET",
-    url: "/auth",
+    url: "/",
     schema: {
       body: authSchema,
       response: { 200: authSchema },
@@ -29,7 +28,7 @@ export async function authRoutes(fastify: FastifyInstance) {
 
   fastify.route<{ Body: Register }>({
     method: "GET",
-    url: "/auth/register",
+    url: "/register",
     schema: {
       body: registerSchema,
       response: { 200: authSchema },
