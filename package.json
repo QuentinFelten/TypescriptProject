@@ -4,7 +4,13 @@
   "description": "End of semester NodeJS project.",
   "main": "index.js",
   "scripts": {
+<<<<<<< Updated upstream
     "start": "tsc && node dist/index.js",
+=======
+    "start": "tsc && cross-env NODE_ENV=production node dist/index.js",
+    "dev": "tsc-watch --onSuccess \"cross-env NODE_ENV=development nodemon dist/index.js\"",
+    "build-schemas": "cd src/schemas/json && npx json2ts -i . -o ../types",
+>>>>>>> Stashed changes
     "test": "mocha"
   },
   "repository": {
@@ -29,7 +35,16 @@
     "@types/react-dom": "^17.0.12",
     "chai": "^4.3.6",
     "express": "^4.17.3",
+<<<<<<< Updated upstream
     "fastify": "^3.27.2",
+=======
+    "fastify": "^3.27.4",
+    "fastify-swagger": "^5.0.0",
+    "json-schema-to-typescript": "^10.1.5",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+>>>>>>> Stashed changes
     "react-dom": "^17.0.2",
     "tslint": "^6.1.3",
     "typescript": "^4.6.2"

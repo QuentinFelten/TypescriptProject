@@ -1,0 +1,11 @@
+{
+  "$id": "item-productAllergy.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["idProduct", "idAllergy"],
+  "additionalProperties": false,
+  "properties": {
+    "idProduct": { "type": "number" },
+    "idAllergy": { "type": "number" }
+  }
+}

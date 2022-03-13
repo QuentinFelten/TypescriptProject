@@ -1,0 +1,15 @@
+{
+  "$id": "item-saleHistory.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["idBuyer", "idListing", "quantity", "price", "rating"],
+  "additionalProperties": false,
+  "properties": {
+    "idBuyer": { "type": "number" },
+    "idListing": { "type": "number" },
+    "quantity": { "type": "number" },
+    "price": { "type": "number" },
+    "rating": { "type": "number" },
+    "review": { "type": "string" }
+  }
+}

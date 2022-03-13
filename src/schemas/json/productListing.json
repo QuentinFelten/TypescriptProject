@@ -1,0 +1,15 @@
+{
+  "$id": "item-productListing.json",
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "required": ["idProduct", "idVendor", "price", "stock", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "idProduct": { "type": "number" },
+    "idVendor": { "type": "number" },
+    "price": { "type": "number" },
+    "stock": { "type": "number" },
+    "id": { "type": "number" },
+    "description": { "type": "string" }
+  }
+}
